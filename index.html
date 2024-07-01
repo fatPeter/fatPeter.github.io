@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+    <style>
+        /* 隐藏 Webkit 浏览器 (如 Chrome, Safari) 中的默认箭头 */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        /* 隐藏 Firefox 中的默认箭头 */
+        summary {
+            list-style: none;
+        }
+        /* 其他浏览器的兼容处理 */
+        details summary::-ms-expand {
+            display: none;
+        }
+
+        summary::before {
+            content: '▲'; /* 定义箭头符号，可以使用其他符号或图标 */
+            display: inline-block;
+            font-size: 20px; /* 调整箭头大小 */
+            transition: transform 0.3s; /* 添加动画效果 */
+            margin-right: 10px; /* 调整箭头和文本之间的距离 */
+        }
+        details[open] summary::before {
+            transform: rotate(180deg); /* 打开时旋转箭头 */
+        }
+
+    </style>
+
     <style type="text/css">
         /* Color scheme stolen from Sergey Karayev */
         a {
@@ -79,6 +106,12 @@
 
     <title>Guangchi Fang's Homepage</title>
     <link rel="icon" type="image/jpg" href="./imgs/polyu_icon.png">
+
+
+    <link rel="stylesheet" href="./static/css/dics.original.css">
+    <script src="./static/js/event_handler.js"></script>
+    <script src="./static/js/dics.original.js"></script>
+
 </head>
 
 <body>
@@ -204,7 +237,7 @@
                             </papertitle>
                         </a>
                             <br><strong>G. Fang</strong> and B. Wang<br>
-                            <!-- <em>ICLR 2024 </em><br> -->
+                            <em>ECCV 2024 </em><br>
                             <a href="https://arxiv.org/pdf/2403.14166.pdf">ArXiv</a> /
                             <a href="https://github.com/fatPeter/mini-splatting"><font >Code</font></a>
 
@@ -212,14 +245,229 @@
                         <p></p>
                     </td>
                 </tr>
-            </table>            
+            </table>    
+
+
+            <br>
+
+            <section class="section">
+                <div class="container is-max-desktop">
+              
+                  <!-- Results. -->
+                  <div class="columns is-centered ">
+                    <div class="column is-full-width">
+                      <!-- <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Motivation</h2> -->
+              
+                      
+                      
+                      
+                      <!-- <h3 class="title is-4">Comparison wtih 3DGS</h3>
+                      <div class="content has-text-justified">
+                        <p>
+                          Here, we show more comparisons with 3DGS + EWA. Both models are trained with downsampled images with factor 8 and render at higher-resolution. 
+                          GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
+                        </p>
+                      </div> -->
+                   
+              
+                      <div class="container">
+                        <div class="b-dics" style="width: 460px; font-weight: 600; transform: translateX(36%)">
+                            <img src="./imgs/mini_splatting/gs.jpg" alt="3DGS">
+                            <img src="./imgs/mini_splatting/ms_d.jpg" alt="Mini-Splatting-D">
+                            <img src="./imgs/mini_splatting/ms.jpg" alt="Mini-Splatting">
+                        </div>
+                      </div>
+
+                     
+                      <p style="text-align: center; font-size: 13px;">Check out the teaser for details of spatial distribution.</p> 
+                      
+              
+                    </div>
+                  </div>
+              
+                </div>
+              </section>
+
+              <br>
+
+              <section class="section">
+                <div class="container is-max-desktop">
+              
+                  <!-- Results. -->
+                  <div class="columns is-centered ">
+                    <div class="column is-full-width">
+                      <!-- <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Motivation</h2> -->
+              
+                      
+                      
+                      
+                      <!-- <h3 class="title is-4">Comparison wtih 3DGS</h3>
+                      <div class="content has-text-justified">
+                        <p>
+                          Here, we show more comparisons with 3DGS + EWA. Both models are trained with downsampled images with factor 8 and render at higher-resolution. 
+                          GT (Training resolution) is the image we used for training but bilinearly upsampled to higher-resolution for reference and GT (8x resolution) is the real GT image we used for evaluation.
+                        </p>
+                      </div> -->
+                   
+              
+                      <div class="container">
+                        <div class="b-dics" style="width: 800px; font-weight: 600; transform: translateX(0%)">
+                            <img src="./imgs/mini_splatting/quant.png">
+
+                        </div>
+                      </div>
+                      
+                     
+                      <p style="text-align: center; font-size: 13px;">Quantitative evaluation. All experimental settings are consistent with the original 3DGS implementation.</p> 
+                      
+              
+                    </div>
+                  </div>
+              
+                </div>
+              </section>
+
+
+
+              
+
+
+
+
             
+            <br>
+
+            
+
+            <details>
+                <summary>
+                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                        <tbody>
+                        <!-- <tr>
+                            <td> -->
+                                <heading>Publications</heading>
+                            <!-- </td>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                </summary>
+
+
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tbody>
+                    <tr>
+                        <td width="20%"><img src="./imgs/ACRF/teaser.jpg" alt="PontTuset" width="180"
+                                             style="border-style: none"></td>
+                        <td width="80%" valign="top">
+                            <p><a href="https://openreview.net/pdf?id=POFrdKvpea">
+                                <papertitle>ACRF: Compressing Explicit Neural Radiance Fields via Attribute Compression
+                                </papertitle>
+                            </a>
+                                <br><strong>G. Fang</strong>, Q. Hu, L. Wang, Y. Guo<br>
+                                <em>ICLR 2024 </em><br>
+                                <a href="https://openreview.net/pdf?id=POFrdKvpea">Paper</a> /
+                                <a href="https://github.com/fatPeter/ACRF"><font >Code</font></a>
+    
+                            <p align="justify" style="font-size:13px">Compression of neural radiance fields via point cloud processing and 3D compression techniques.</p>
+                            <p></p>
+                        </td>
+                    </tr>
+                </table>            
+                
+    
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tbody>
+                    <tr>
+                        <td width="20%"><img src="./imgs/3DAC/3DAC.png" alt="PontTuset" width="180"
+                                             style="border-style: none"></td>
+                        <td width="80%" valign="top">
+                            <p><a href="https://arxiv.org/abs/2203.09931">
+                                <papertitle>3DAC: Learning Attribute Compression for Point Clouds
+                                </papertitle>
+                            </a>
+                                <br><strong>G. Fang</strong>, Q. Hu, H. Wang, Y. Xu, Y. Guo<br>
+                                <em>CVPR 2022 </em><br>
+                                <a href="https://arxiv.org/abs/2203.09931">Paper</a> /
+                                <a href="https://github.com/fatPeter/ThreeDAC"><font >Code</font></a> /
+                                <a href="https://www.youtube.com/watch?v=QTkkI0AyvLM&t=205s">Presentation</a> /
+                                <a href="imgs/3DAC/3DAC_cvpr_poster.pdf">Poster</a>
+    
+                            <p align="justify" style="font-size:13px">Point cloud attribute compression leveraging deep entropy coding.</p>
+                            <p></p>
+                        </td>
+                    </tr>
+                </table>
+    
+    
+    
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tbody>
+                    <tr>
+                        <td width="20%"><img src="./imgs/3DPointCaps.png" alt="PontTuset" width="180"
+                                             style="border-style: none"></td>
+                        <td width="80%" valign="top">
+                            <p><a href="https://link.springer.com/article/10.1007/s11263-022-01632-6">
+                                <papertitle>3DPointCaps++: Learning 3D Representations with Capsule Networks
+                                </papertitle>
+                            </a>
+                                <br>Y. Zhao*, <strong>G. Fang*</strong>, Y. Guo, L. Guibas, F. Tombari, T. Birdal<br>
+                                <em>IJCV 2022 </em> (* indicates equal contribution) <br>
+                                <a href="https://link.springer.com/article/10.1007/s11263-022-01632-6">Paper</a> /
+                                <a href="https://github.com/yongheng1991/3D-point-capsule-networks/tree/plus"><font >Code</font></a> /
+                                <a href="https://www.youtube.com/watch?v=04_Be2v6vYI"><font >Demo</font></a> 
+    
+                                
+                                
+                            <p align="justify" style="font-size:13px"> 
+                                Rigid and non-rigid point cloud representation learning based on capsule. 
+                            <p></p>
+                        </td>
+                    </tr>
+                </table>
+                    
+        
+    
+    
+    
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tbody>
+                    <tr>
+                        <td width="20%"><img src="./imgs/SQN_2.gif" alt="PontTuset" width="180"
+                                                style="border-style: none"></td>
+                        <td width="80%" valign="top">
+                            <p><a href="https://arxiv.org/abs/2104.04891">
+                                <papertitle>SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds
+                                </papertitle>
+                            </a>
+                                <br>Q. Hu, B. Yang, <strong>G. Fang</strong>, A. Leonardis, Y. Guo, N. Trigoni, A.
+                                Markham<br>
+                                <em> ECCV 2022</em>
+                                <br>
+                                <!--<font color="red"><strong>..</strong></font><br>-->
+                                <a href="https://arxiv.org/abs/2104.04891">ArXiv</a> / 
+                                <a href="https://github.com/QingyongHu/SQN"><font >Code</font></a> /
+                                <a href="https://www.youtube.com/watch?v=Q6wICSRRw3s&t=4s">Demo</a> /
+                                <a href="https://www.youtube.com/watch?v=N0UAeY31msY&t=4s">Annotation</a>
+    
+                                <!--<iframe src="https://ghbtns.com/github-btn.html?user=QingyongHu&repo=SQN&type=star&count=true&size=small"
+                                        frameborder="0" scrolling="0" width="120px" height="20px"></iframe>-->
+                            <p align="justify" style="font-size:13px"> 
+                                Weakly supervised point cloud segmentation through point query.</p>
+                            <p></p>
+                        </td>
+                    </tr>
+                </table>
+                
+
+                
+            </details>
+
 
 
 
             
             <!--SECTION 4 -->
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
                 <tbody>
                 <tr>
                     <td>
@@ -227,116 +475,10 @@
                     </td>
                 </tr>
                 </tbody>
-            </table>
+            </table> -->
 
 
-            <!--SECTION 5 -->
-
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-                <tbody>
-                <tr>
-                    <td width="20%"><img src="./imgs/ACRF/teaser.jpg" alt="PontTuset" width="180"
-                                         style="border-style: none"></td>
-                    <td width="80%" valign="top">
-                        <p><a href="https://openreview.net/pdf?id=POFrdKvpea">
-                            <papertitle>ACRF: Compressing Explicit Neural Radiance Fields via Attribute Compression
-                            </papertitle>
-                        </a>
-                            <br><strong>G. Fang</strong>, Q. Hu, L. Wang, Y. Guo<br>
-                            <em>ICLR 2024 </em><br>
-                            <a href="https://openreview.net/pdf?id=POFrdKvpea">Paper</a> /
-                            <a href="https://github.com/fatPeter/ACRF"><font >Code</font></a>
-
-                        <p align="justify" style="font-size:13px">Compression of neural radiance fields via point cloud processing and 3D compression techniques.</p>
-                        <p></p>
-                    </td>
-                </tr>
-            </table>            
             
-
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-                <tbody>
-                <tr>
-                    <td width="20%"><img src="./imgs/3DAC/3DAC.png" alt="PontTuset" width="180"
-                                         style="border-style: none"></td>
-                    <td width="80%" valign="top">
-                        <p><a href="https://arxiv.org/abs/2203.09931">
-                            <papertitle>3DAC: Learning Attribute Compression for Point Clouds
-                            </papertitle>
-                        </a>
-                            <br><strong>G. Fang</strong>, Q. Hu, H. Wang, Y. Xu, Y. Guo<br>
-                            <em>CVPR 2022 </em><br>
-                            <a href="https://arxiv.org/abs/2203.09931">Paper</a> /
-                            <a href="https://github.com/fatPeter/ThreeDAC"><font >Code</font></a> /
-                            <a href="https://www.youtube.com/watch?v=QTkkI0AyvLM&t=205s">Presentation</a> /
-                            <a href="imgs/3DAC/3DAC_cvpr_poster.pdf">Poster</a>
-
-                        <p align="justify" style="font-size:13px">Point cloud attribute compression leveraging deep entropy coding.</p>
-                        <p></p>
-                    </td>
-                </tr>
-            </table>
-
-
-
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-                <tbody>
-                <tr>
-                    <td width="20%"><img src="./imgs/3DPointCaps.png" alt="PontTuset" width="180"
-                                         style="border-style: none"></td>
-                    <td width="80%" valign="top">
-                        <p><a href="https://link.springer.com/article/10.1007/s11263-022-01632-6">
-                            <papertitle>3DPointCaps++: Learning 3D Representations with Capsule Networks
-                            </papertitle>
-                        </a>
-                            <br>Y. Zhao*, <strong>G. Fang*</strong>, Y. Guo, L. Guibas, F. Tombari, T. Birdal<br>
-                            <em>IJCV 2022 </em> (* indicates equal contribution) <br>
-                            <a href="https://link.springer.com/article/10.1007/s11263-022-01632-6">Paper</a> /
-                            <a href="https://github.com/yongheng1991/3D-point-capsule-networks/tree/plus"><font >Code</font></a> /
-                            <a href="https://www.youtube.com/watch?v=04_Be2v6vYI"><font >Demo</font></a> 
-
-                            
-                            
-                        <p align="justify" style="font-size:13px"> 
-                            Rigid and non-rigid point cloud representation learning based on capsule. 
-                        <p></p>
-                    </td>
-                </tr>
-            </table>
-                
-    
-
-
-
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-                <tbody>
-                <tr>
-                    <td width="20%"><img src="./imgs/SQN_2.gif" alt="PontTuset" width="180"
-                                            style="border-style: none"></td>
-                    <td width="80%" valign="top">
-                        <p><a href="https://arxiv.org/abs/2104.04891">
-                            <papertitle>SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds
-                            </papertitle>
-                        </a>
-                            <br>Q. Hu, B. Yang, <strong>G. Fang</strong>, A. Leonardis, Y. Guo, N. Trigoni, A.
-                            Markham<br>
-                            <em> ECCV 2022</em>
-                            <br>
-                            <!--<font color="red"><strong>..</strong></font><br>-->
-                            <a href="https://arxiv.org/abs/2104.04891">ArXiv</a> / 
-                            <a href="https://github.com/QingyongHu/SQN"><font >Code</font></a> /
-                            <a href="https://www.youtube.com/watch?v=Q6wICSRRw3s&t=4s">Demo</a> /
-                            <a href="https://www.youtube.com/watch?v=N0UAeY31msY&t=4s">Annotation</a>
-
-                            <!--<iframe src="https://ghbtns.com/github-btn.html?user=QingyongHu&repo=SQN&type=star&count=true&size=small"
-                                    frameborder="0" scrolling="0" width="120px" height="20px"></iframe>-->
-                        <p align="justify" style="font-size:13px"> 
-                            Weakly supervised point cloud segmentation through point query.</p>
-                        <p></p>
-                    </td>
-                </tr>
-            </table>
-
 
             <!--SECTION 6 -->
 
